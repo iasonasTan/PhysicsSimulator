@@ -24,6 +24,7 @@ public class EntityRequest extends JPanel {
     // logic
     private int mDone = 0;
     private final Object lock = new Object();
+    private static int sEntityId = 0;
 
     public EntityRequest() {
         JPanel xPanel = new JPanel();
@@ -82,7 +83,7 @@ public class EntityRequest extends JPanel {
                 System.exit(1);
             }
 
-            return new EntityBuilder().setName(mNameField.getText())
+            Entity e = new EntityBuilder(sEntityId).setName(mNameField.getText())
                     // x
                     .setX(x)
                     .setVx(vx)
@@ -92,6 +93,8 @@ public class EntityRequest extends JPanel {
                     .setVy(vy)
                     .setAy(ay)
                     .build();
+            sEntityId++;
+            return e;
         }
 
         return null;

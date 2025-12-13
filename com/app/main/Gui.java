@@ -14,6 +14,7 @@ import java.awt.Graphics2D;
 import java.awt.GraphicsDevice;
 import java.awt.GraphicsEnvironment;
 import java.awt.GridLayout;
+import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.Map;
@@ -23,8 +24,15 @@ import com.app.utils.*;
 
 public class Gui extends JPanel implements Runnable, KeyListener {
     // GUI CONSTANTS
-    public static final int WINDOW_WIDTH  = Utils.getScreenWidth();
-    public static final int WINDOW_HEIGHT = Utils.getScreenHeight();
+    public static final int WINDOW_WIDTH;
+    public static final int WINDOW_HEIGHT;
+
+    static {
+        Toolkit toolkit = Toolkit.getDefaultToolkit();
+        Dimension dimension = toolkit.getScreenSize();
+        WINDOW_WIDTH  = dimension.width;
+        WINDOW_HEIGHT = dimension.height;
+    }
 
     // GUI COMPONENTS
     private final JButton mPauseButton = new JButton("Pause");
@@ -138,7 +146,9 @@ public class Gui extends JPanel implements Runnable, KeyListener {
         JFrame frame = new JFrame("Simulation");
         if(full) {
             frame.setUndecorated(true);
-            GraphicsDevice device = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
+            GraphicsDevice device = GraphicsEnvironment
+                .getLocalGraphicsEnvironment()
+                .getDefaultScreenDevice();
             device.setFullScreenWindow(frame);
         }
         frame.setContentPane(panel);

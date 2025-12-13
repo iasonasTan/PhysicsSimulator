@@ -1,9 +1,14 @@
 package com.app.utils;
 
 public final class EntityBuilder {
-    private Entity mEntity = new Entity();
+    private Entity mEntity;
+
+    public EntityBuilder(int idx) {
+        mEntity = new Entity(idx);
+    }
 
     public EntityBuilder() {
+        mEntity = new Entity();
     }
 
     public EntityBuilder(Entity e) {
