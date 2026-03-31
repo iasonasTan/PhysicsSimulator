@@ -6,11 +6,11 @@ import java.awt.Graphics;
 import com.app.main.DiagramDrawer;
 
 public final class Entity {
-    private float mX, mY;
-    private float mW, mH;
+    private float mX, mY, mW, mH;
     private float mVx, mVy;
     private float mAx, mAy;
     private String mName;
+
     private final DiagramDrawer mDiagramVel = new DiagramDrawer(this, DiagramDrawer.RenderType.VEL, 0, 0), 
         mDiagramPos = new DiagramDrawer(this, DiagramDrawer.RenderType.POS, 0, 250);
 
@@ -22,7 +22,7 @@ public final class Entity {
 
     public Entity() {
         mX  = mY  = 0  ;
-        mW  = mH  = 50f;
+        mW  = mH  = 50f; // default size
         mVx = mVy = 0f ;
         mAx = mAy = 0f ;
     }
