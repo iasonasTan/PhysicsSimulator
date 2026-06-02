@@ -89,8 +89,12 @@ public class DiagramDrawer {
             g.drawOval(mPosX+i, mPosY+mHeight-data.getX(), 1, 1);
             g.drawOval(mPosX+i, mPosY+mHeight-data.getY(), 1, 1);
             if(i%100==0) {
-                g.drawString(mType.name()+"_X", mPosX+i, mPosY+mHeight-data.getX()-10);
-                g.drawString(mType.name()+"_Y", mPosY+i, mPosY+mHeight-data.getY()-10);
+                if(mPosX+i+10/*string width*/ <= mPosX+mWidth) {
+                    g.drawString(mType.name()+"_X", mPosX+i, mPosY+mHeight-data.getX()-10);
+                }
+                if(mPosY+i+10/*string width*/ <= mPosX+mWidth) {
+                    g.drawString(mType.name()+"_Y", mPosY+i, mPosY+mHeight-data.getY()-10);
+                }
             }
         }
         g.setFont(gFont);
