@@ -15,7 +15,7 @@ PhysicsSimulator provides a framework for simulating various physics concepts an
 
 ## Requirements
 
-- Java 8 or higher
+- Java 25 (or higher)
 
 ## Usage
 
