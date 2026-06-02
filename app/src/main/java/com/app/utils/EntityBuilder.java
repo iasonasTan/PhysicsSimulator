@@ -46,7 +46,7 @@ public final class EntityBuilder {
     }
 
     public EntityBuilder setVy(float vy) {
-        mEntity.setY(vy);
+        mEntity.setVy(vy);
         return this;
     }
 

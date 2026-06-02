@@ -105,7 +105,7 @@ public class EntityRequest extends JPanel {
             return Float.parseFloat(field.getText());
         } catch (Exception e) {
             field.setBackground(Color.RED);
-            JOptionPane.showMessageDialog(this, "This is not an integer.");
+            JOptionPane.showMessageDialog(this, "This is not a number.");
             return null;
         }
     }

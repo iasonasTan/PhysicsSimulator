@@ -85,7 +85,7 @@ public final class Entity {
     }
 
     public void setVy(float vy) {
-        mVx = vy;
+        mVy = vy;
     }
 
     public String getName() {
